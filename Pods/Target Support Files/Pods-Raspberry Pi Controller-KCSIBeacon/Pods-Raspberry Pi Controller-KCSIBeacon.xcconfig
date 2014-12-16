@@ -1,0 +1,1 @@
+PODS_RASPBERRY_PI_CONTROLLER_KCSIBEACON_OTHER_LDFLAGS = -framework "CoreBluetooth" -framework "CoreLocation" -framework "UIKit"

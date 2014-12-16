@@ -1,0 +1,5 @@
+#include "Pods-Raspberry Pi Controller-KCSIBeacon.xcconfig"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Build" "${PODS_ROOT}/Headers/Build/KCSIBeacon" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/KCSIBeacon"
+OTHER_LDFLAGS = ${PODS_RASPBERRY_PI_CONTROLLER_KCSIBEACON_OTHER_LDFLAGS} -ObjC
+PODS_ROOT = ${SRCROOT}

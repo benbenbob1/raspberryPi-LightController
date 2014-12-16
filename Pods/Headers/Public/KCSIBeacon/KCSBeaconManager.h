@@ -1,0 +1,1 @@
+../../../KCSIBeacon/KCSIBeacon/KCSBeaconManager.h

@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <scenes>
+        <!--First-->
+        <scene sceneID="W3I-pn-N6e">
+            <objects>
+                <viewController title="First" id="CZ4-MO-1fc" customClass="rpiFirstViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="s9W-kb-ARv"/>
+                        <viewControllerLayoutGuide type="bottom" id="dtj-EO-iXF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2VE-Yg-loa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qcn-4h-0mZ" customClass="ColorSwatchView">
+                                <rect key="frame" x="210" y="290" width="90" height="67"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Selected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0KD-yT-QKJ">
+                                        <rect key="frame" x="0.0" y="49" width="90" height="18"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="b12-Uo-yYl"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="0KD-yT-QKJ" secondAttribute="trailing" id="NuR-9L-8Uw"/>
+                                    <constraint firstAttribute="height" constant="67" id="XEe-Cm-1ed"/>
+                                    <constraint firstItem="0KD-yT-QKJ" firstAttribute="leading" secondItem="qcn-4h-0mZ" secondAttribute="leading" id="bmC-fh-I1G"/>
+                                    <constraint firstAttribute="bottom" secondItem="0KD-yT-QKJ" secondAttribute="bottom" id="izY-zu-xhb"/>
+                                </constraints>
+                            </view>
+                            <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="AWr-xt-mLU">
+                                <rect key="frame" x="18" y="299" width="186" height="31"/>
+                                <connections>
+                                    <action selector="sliderAdjusted:" destination="CZ4-MO-1fc" eventType="valueChanged" id="PLU-w4-ILh"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Brightness: 100%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQq-EL-8Mf">
+                                <rect key="frame" x="20" y="327" width="182" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNW-JH-fKV" customClass="rpiButton">
+                                <rect key="frame" x="20" y="250" width="140" height="32"/>
+                                <state key="normal" title="Turn Off">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="offButtonPressed:" destination="CZ4-MO-1fc" eventType="touchUpInside" id="vxg-lD-Jbu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iao-1T-ZhE" customClass="rpiButton">
+                                <rect key="frame" x="160" y="250" width="140" height="32"/>
+                                <state key="normal" title="Turn On">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onButtonPressed:" destination="CZ4-MO-1fc" eventType="touchUpInside" id="2vt-0M-Kah"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mtr-j9-JoB" customClass="GradientView">
+                                <rect key="frame" x="250" y="25" width="48" height="217"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                            </view>
+                            <view opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D2E-kR-0DW" customClass="rpiColorWheel">
+                                <rect key="frame" x="20" y="20" width="222" height="222"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="D2E-kR-0DW" firstAttribute="top" secondItem="s9W-kb-ARv" secondAttribute="bottom" id="076-J6-J6y"/>
+                            <constraint firstItem="xNW-JH-fKV" firstAttribute="leading" secondItem="2VE-Yg-loa" secondAttribute="leading" constant="20" id="4Hl-eV-anD"/>
+                            <constraint firstItem="iao-1T-ZhE" firstAttribute="leading" secondItem="xNW-JH-fKV" secondAttribute="trailing" id="4vh-Sa-ONF"/>
+                            <constraint firstItem="iao-1T-ZhE" firstAttribute="width" secondItem="xNW-JH-fKV" secondAttribute="width" id="9K3-v8-YcX"/>
+                            <constraint firstAttribute="trailing" secondItem="qcn-4h-0mZ" secondAttribute="trailing" constant="20" id="9Lp-HR-y9L"/>
+                            <constraint firstItem="yQq-EL-8Mf" firstAttribute="top" secondItem="iao-1T-ZhE" secondAttribute="bottom" constant="45" id="9w6-Y8-rUm"/>
+                            <constraint firstItem="D2E-kR-0DW" firstAttribute="leading" secondItem="2VE-Yg-loa" secondAttribute="leading" constant="20" id="BK5-zi-8Sc"/>
+                            <constraint firstItem="Mtr-j9-JoB" firstAttribute="leading" secondItem="D2E-kR-0DW" secondAttribute="trailing" constant="8" id="CTP-PK-Kh1"/>
+                            <constraint firstItem="iao-1T-ZhE" firstAttribute="leading" secondItem="xNW-JH-fKV" secondAttribute="trailing" id="IO9-1H-axm"/>
+                            <constraint firstItem="yQq-EL-8Mf" firstAttribute="width" secondItem="AWr-xt-mLU" secondAttribute="width" id="MRq-VX-Hfv"/>
+                            <constraint firstAttribute="trailing" secondItem="Mtr-j9-JoB" secondAttribute="trailing" constant="20" id="OYd-Qo-xF7"/>
+                            <constraint firstItem="iao-1T-ZhE" firstAttribute="top" secondItem="D2E-kR-0DW" secondAttribute="bottom" constant="8" id="OcD-mk-RZN"/>
+                            <constraint firstItem="AWr-xt-mLU" firstAttribute="top" secondItem="iao-1T-ZhE" secondAttribute="bottom" constant="17" id="S0a-Wn-Zia"/>
+                            <constraint firstItem="AWr-xt-mLU" firstAttribute="leading" secondItem="2VE-Yg-loa" secondAttribute="leading" constant="20" id="U94-Tl-JNX"/>
+                            <constraint firstItem="yQq-EL-8Mf" firstAttribute="leading" secondItem="2VE-Yg-loa" secondAttribute="leading" constant="20" id="Uxp-09-98v"/>
+                            <constraint firstItem="AWr-xt-mLU" firstAttribute="top" secondItem="xNW-JH-fKV" secondAttribute="bottom" constant="17" id="fId-90-rNP"/>
+                            <constraint firstItem="AWr-xt-mLU" firstAttribute="top" secondItem="iao-1T-ZhE" secondAttribute="bottom" constant="17" id="fdF-CQ-o3I"/>
+                            <constraint firstAttribute="trailing" secondItem="iao-1T-ZhE" secondAttribute="trailing" constant="20" id="gfm-L6-ldf"/>
+                            <constraint firstItem="xNW-JH-fKV" firstAttribute="top" secondItem="D2E-kR-0DW" secondAttribute="bottom" constant="8" id="pBR-Ha-kif"/>
+                            <constraint firstItem="Mtr-j9-JoB" firstAttribute="top" secondItem="s9W-kb-ARv" secondAttribute="bottom" constant="5" id="qwk-e8-UuG"/>
+                            <constraint firstItem="iao-1T-ZhE" firstAttribute="height" secondItem="xNW-JH-fKV" secondAttribute="height" id="vx2-XL-xhW"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Lights" image="first" id="u1e-5L-l1D"/>
+                    <connections>
+                        <outlet property="brightnessLabel" destination="yQq-EL-8Mf" id="rkf-BV-aoQ"/>
+                        <outlet property="brightnessSlider" destination="AWr-xt-mLU" id="8Xx-EZ-ofe"/>
+                        <outlet property="colorWheel" destination="D2E-kR-0DW" id="HZp-CL-dKT"/>
+                        <outlet property="gradientView" destination="Mtr-j9-JoB" id="j4U-UL-w2z"/>
+                        <outlet property="newColorSwatch" destination="qcn-4h-0mZ" id="OEB-aq-sun"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qh2-T1-AhA" sceneMemberID="firstResponder"/>
+                <customObject id="pWo-j7-Efj" customClass="rpiAppDelegate">
+                    <connections>
+                        <outlet property="tabBarContr" destination="8YX-ce-x5E" id="nNG-pp-70C"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="653" y="-138"/>
+        </scene>
+        <!--Second-->
+        <scene sceneID="ot8-2e-RuS">
+            <objects>
+                <viewController title="Second" id="QUy-BD-bpt" customClass="rpiSecondViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FgS-U6-xeU"/>
+                        <viewControllerLayoutGuide type="bottom" id="stI-4g-hlJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gMD-aP-Fq6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="29h-N2-YGT">
+                                <rect key="frame" x="20" y="74" width="280" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="localhost:51717" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="i9Z-Ta-9Ld">
+                                <rect key="frame" x="16" y="181" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="QUy-BD-bpt" id="Y1o-9Q-HPy"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xuq-2P-TqH" customClass="rpiButton">
+                                <rect key="frame" x="170" y="219" width="130" height="30"/>
+                                <state key="normal" title="Connect"/>
+                                <connections>
+                                    <action selector="connectButtonPushed:" destination="QUy-BD-bpt" eventType="touchUpInside" id="RpT-wd-jci"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="p r 23" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uts-1H-rVr">
+                                <rect key="frame" x="16" y="268" width="193" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                <connections>
+                                    <outlet property="delegate" destination="QUy-BD-bpt" id="zPm-qj-JEL"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jsE-D4-Rlc" customClass="rpiButton">
+                                <rect key="frame" x="217" y="267" width="87" height="30"/>
+                                <state key="normal" title="Send">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendMessageButtonPushed:" destination="QUy-BD-bpt" eventType="touchUpInside" id="wok-D2-yAy"/>
+                                </connections>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kNv-ry-whJ">
+                                <rect key="frame" x="236" y="335" width="51" height="31"/>
+                                <connections>
+                                    <action selector="trackSwitchTouched:" destination="QUy-BD-bpt" eventType="valueChanged" id="sZX-4y-QGC"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Track beacon" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Li2-c0-T1Q">
+                                <rect key="frame" x="16" y="340" width="212" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="29h-N2-YGT" firstAttribute="leading" secondItem="gMD-aP-Fq6" secondAttribute="leading" constant="20" symbolic="YES" id="4te-rk-9Fp"/>
+                            <constraint firstAttribute="trailing" secondItem="29h-N2-YGT" secondAttribute="trailing" constant="20" symbolic="YES" id="FIx-Zl-RBr"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="second" id="Z7h-1E-pvt"/>
+                    <connections>
+                        <outlet property="connectButton" destination="xuq-2P-TqH" id="F2i-2E-1nS"/>
+                        <outlet property="hostField" destination="i9Z-Ta-9Ld" id="7TF-rX-eBG"/>
+                        <outlet property="messageField" destination="uts-1H-rVr" id="RHu-UM-bPm"/>
+                        <outlet property="sendButton" destination="jsE-D4-Rlc" id="VxV-dD-kAe"/>
+                        <outlet property="trackBeaconSwitch" destination="kNv-ry-whJ" id="By6-RB-Y6N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3qq-4t-Ow8" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="653" y="498"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Vex-rW-GRa">
+            <objects>
+                <tabBarController id="8YX-ce-x5E" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="JQR-rB-NYL">
+                        <rect key="frame" x="0.0" y="431" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <outlet property="delegate" destination="gW7-qI-aK3" id="1Gq-39-CEm"/>
+                        <segue destination="CZ4-MO-1fc" kind="relationship" relationship="viewControllers" id="SUk-Ux-ee1"/>
+                        <segue destination="QUy-BD-bpt" kind="relationship" relationship="viewControllers" id="M8t-EP-wfW"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FNP-y4-bzi" sceneMemberID="firstResponder"/>
+                <customObject id="gW7-qI-aK3" customClass="rpiAppDelegate">
+                    <connections>
+                        <outlet property="tabBarContr" destination="8YX-ce-x5E" id="93l-Yb-bfd"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="132" y="180"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="first" width="30" height="30"/>
+        <image name="second" width="30" height="30"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
