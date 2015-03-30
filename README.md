@@ -17,6 +17,7 @@ The Pi controls the lights using a custom made circuit and pi-blaster [https://g
 
 	• c r g b - set the color to r, g, b. The RGB values are integers ranging from 0 to 100
 	• f s/e - start/end a fade loop. This fades through the colors of the rainbow in a separate loop
+	• y s/e - start/end a color cycle. This cycles through the colors of the rainbow in a separate loop
     • h s/e - start/end Christmas loop. This loop alternates between red and green every 3.8 seconds
     • p r/g/b PIN - changes the GPIO pin for the given color to the supplied pin. The default pins are:
 		Red   - 23
