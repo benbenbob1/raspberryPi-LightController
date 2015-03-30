@@ -26,6 +26,7 @@ void fadeToColor(int toR, int toG, int toB);
 double step(double fromVal, double toVal, double speed);
 bool isClose(double a, double b);
 void fadeLoop();
+void cycleLoop();
 void christmasLoop();
 
 bool isDaemon = true;
@@ -186,6 +187,21 @@ bool Servlet( int sock )
     		}
     	}
 
+	} else if( inBuf[0] == 'y' ) { 		//c[y]cling colors:
+		if ( inBuf[1] == 's' ) { 		// start cycle
+			shouldFade = true;
+			fadeLoopPID = fork();
+			if ( fadeLoopPID == 0 ) {
+				printf("starting fade loop in PID %d\n", getpid());
+				cycleLoop();
+			}
+		} else if ( inBuf[1] == 'e' ) { // stop (end) fade
+			shouldFade = false;
+			if (fadeLoopPID > 0) {
+				kill(fadeLoopPID, SIGTERM);
+			}
+		}
+
 	} else if( inBuf[0] == 'h' ) { 		//c[h]ristmas:
 		if ( inBuf[1] == 's' ) { 		// start loop
 			shouldFade = true;
@@ -235,6 +251,27 @@ void fadeLoop() {
 	fadeToColor(78, 0, 100);// Purple
 	if (shouldFade) {
 		fadeLoop();
+	} else {
+		exit(EXIT_SUCCESS);
+	}
+}
+
+void cycleLoop() {
+	int sleepTime = 0.8*1000000; //Sleep 0.8 sec between colors
+	setColor(100, 0, 0);	// Red
+	usleep(sleepTime);
+	setColor(95, 16, 0);	// Orange
+	usleep(sleepTime);
+	setColor(95, 41, 0);	// Yellow
+	usleep(sleepTime);
+	setColor(0, 100, 0);	// Green
+	usleep(sleepTime);
+	setColor(0, 0, 100);	// Blue
+	usleep(sleepTime);
+	setColor(78, 0, 100);// Purple
+	if (shouldFade) {
+		usleep(sleepTime);
+		cycleLoop();
 	} else {
 		exit(EXIT_SUCCESS);
 	}
